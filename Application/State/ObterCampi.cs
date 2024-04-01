@@ -24,7 +24,7 @@ public class ObterCampi : State
     {
         ReplyKeyboardMarkup replyKeyboardMarkup = new(new[]
         {
-            new KeyboardButton[] { "Santo André", "São Bernardo do Campo" },
+            new KeyboardButton[] { "Santo André", "São Bernardo do Campo", "Cancelar" },
         })
         {
             ResizeKeyboard = true
@@ -35,10 +35,5 @@ public class ObterCampi : State
             text: "Selecione o campi:",
             replyMarkup: replyKeyboardMarkup,
             cancellationToken: TelegramDTO.cancellationToken);
-    }
-
-    public override Task EnviarNovaMensagem()
-    {
-        throw new NotImplementedException();
     }
 }

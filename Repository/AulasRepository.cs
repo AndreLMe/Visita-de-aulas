@@ -1,7 +1,5 @@
-using System.Collections;
 using Application.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Repository.Interfaces;
 
 namespace Repository;
@@ -16,6 +14,8 @@ public class AulasRepository : GenericRepository<AulasModel>, IAulas
         string campi,
         string dia)
         {
+            Console.WriteLine($"das {dataEHorario}, {dia}");
+            dia = "segunda";
             return await _dbSet.Where(t => 
             t.universidade == "UFABC" &&
             t.campi == campi &&

@@ -23,7 +23,7 @@ public class ObterME : State
     {
         ReplyKeyboardMarkup replyKeyboardMarkup = new(new[]
         {
-            new KeyboardButton[] { "DCE", "CABCT", "DALI" },
+            new KeyboardButton[] { "DCE", "CABCT", "DALI", "Cancelar" },
         })
         {
             ResizeKeyboard = true
@@ -34,10 +34,5 @@ public class ObterME : State
             text: "Entidade ?",
             replyMarkup: replyKeyboardMarkup,
             cancellationToken: TelegramDTO.cancellationToken);
-    }
-
-    public override Task EnviarNovaMensagem()
-    {
-        throw new NotImplementedException();
     }
 }

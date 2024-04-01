@@ -11,6 +11,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 
 Utils.FilesUtil.LoadEnvFile();
 var botClient = new TelegramBotClient(Environment.GetEnvironmentVariable("TELEGRAM_TOKEN"));
+
 var uow = new UnitOfWork(new AulasContext());
 using CancellationTokenSource cts = new ();
 
@@ -58,6 +59,12 @@ async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, Cancel
     {
         estado = new ObterUniversidade(dto, uow);
     }
+    
+    else if(messageText.ToLower() == "cancelar")
+    {
+        estado = new Cancelar(dto, uow);
+    }
+    
     else
     {
         var key = await uow.Requests.Get(chatId);

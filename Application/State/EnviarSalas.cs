@@ -62,7 +62,7 @@ public class EnviarSalas : State
                         UFABCSalasWhiteList.SalasVisitaveis
                         .Exists(c => c.Equals(t.sala)))
                         .ToList();
-        results.ForEach(t => sb.AppendLine($"{t.nomeDaMateria} - {t.sala}"));
+        results.ForEach(t => sb.AppendLine($"{t.nomeDaMateria}{t.sala}, {t.dataEHorario}"));
         
         if(String.IsNullOrEmpty(sb.ToString()))
         {
@@ -77,10 +77,5 @@ public class EnviarSalas : State
             text: sb.ToString(),
             replyMarkup: new ReplyKeyboardRemove(),
             cancellationToken: TelegramDTO.cancellationToken);
-    }
-
-    public override Task EnviarNovaMensagem()
-    {
-        throw new NotImplementedException();
     }
 }

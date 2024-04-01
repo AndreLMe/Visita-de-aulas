@@ -36,7 +36,7 @@ public class RequestRepository : IRequest
 
     public async Task Edit(long id, Request request, string nameof)
     {
-        Request req;
+        Request req = new Request();
         if(requests.TryGetValue(id, out req))
             req.EstadoAnterior = nameof;
         await this.Edit(id, request);

@@ -22,7 +22,7 @@ public class ObterHorario : State
     {
         ReplyKeyboardMarkup replyKeyboardMarkup = new(new[]
         {
-            new KeyboardButton[] { "08:00", "10:00", "19:00", "21:00" },
+            new KeyboardButton[] { "08:00", "10:00", "19:00", "21:00", "Cancelar" },
         })
         {
             ResizeKeyboard = true
@@ -33,10 +33,5 @@ public class ObterHorario : State
             text: "Qual o horário das visitas ?",
             replyMarkup: replyKeyboardMarkup,
             cancellationToken: TelegramDTO.cancellationToken);
-    }
-
-    public override Task EnviarNovaMensagem()
-    {
-        throw new NotImplementedException();
     }
 }

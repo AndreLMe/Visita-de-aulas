@@ -31,10 +31,4 @@ public class ObterUniversidade : State
             replyMarkup: replyKeyboardMarkup,
             cancellationToken: TelegramDTO.cancellationToken);
     }
-
-    public override Task EnviarNovaMensagem()
-    {
-        throw new NotImplementedException();
-    }
-
 }
